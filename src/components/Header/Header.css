@@ -8,9 +8,14 @@
     justify-content: space-between;
     padding: 0.5rem 1.5rem;
     height: 5rem;
+    grid-area: header;
+    position: sticky;
+    top:0;
+    left:0;
 }
+
 .search-bar{
-    border: 3px solid var(--border);
+    
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;

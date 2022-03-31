@@ -1,9 +1,14 @@
 
+html{
+  height: 100%;
 
+}
+body{
+  min-height: 100%;
+}
 .App {
-  text-align: center;
   background-color: var(--background);
   color:white;
-  
+  height: 97vh;
 }
 

@@ -1,0 +1,35 @@
+.thumbnail{
+    max-width: 330px;
+    max-height: 185px;
+    border-radius:0.4rem;
+    margin: 0 auto;
+}
+.video-title{
+    margin: 0;
+}
+.video-details{
+    display: flex;
+    justify-content: space-between;
+    max-width: 330px;
+    align-items: center;
+    margin: 0.5rem 1rem;
+    color: var(--border);
+}
+.video-card{
+    max-width:350px;
+    background-color: var(--card-background);
+    border: 2px solid var(--border);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: space-around;
+    padding: 0.5rem 0.3rem;
+    border-radius:0.4rem ;
+}
+.icon:hover{
+    cursor: pointer;
+}
+.video-card:hover{
+    cursor: pointer;
+}

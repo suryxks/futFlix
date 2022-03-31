@@ -1,0 +1,41 @@
+.side-bar{
+    background-color: var(--header-background);
+    margin-top:1rem;
+    grid-area: sidebar;
+   
+    height: 100%;
+   
+}
+.sidebar-items{
+
+   position: sticky;
+   left: 0;
+   top:5rem;
+   align-self: start;
+   padding-left: 0;
+}
+
+.navigation-link{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap:2rem;
+}
+.navigation-link:visited{
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar-item{
+  list-style: none;
+  margin: 1rem 0.5rem;
+  padding:0.5rem;
+  border-radius:0.4rem;
+  
+}
+.current-tab{
+  background-color: var(--active-tab);
+  color: var(--icon-color);
+  }

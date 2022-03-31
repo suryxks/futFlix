@@ -1,4 +1,4 @@
-.home{
+.liked{
     min-height: 100%;
     display: grid;
     grid-template-columns: 2fr 8fr;
@@ -11,9 +11,4 @@
 .videoListing{
     margin: 2rem;
     grid-area: videoListing;
-}
-
-.videos{
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
 }
