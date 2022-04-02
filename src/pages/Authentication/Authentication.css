@@ -1,0 +1,47 @@
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    background-color: var(--header-background);
+    border: 3px solid var(--from-border);
+    border-radius: 0.4rem;
+    margin: 20vh auto;
+    padding: 1rem;
+}
+.btn-cta{
+    background-color: var(--cta);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    width: 20rem;
+    cursor: pointer;
+}
+.btn-outlined{
+    border: 2px solid var(--border);
+    color: var(--border);
+    background-color: var(--header-background);
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    width: 20rem;
+}
+.auth-input{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: var(--card-background);
+    margin: 1rem;
+    border: none;
+    outline: 2px solid var(--from-border);
+    border-radius:0.4rem;
+    color: white;
+    width: 20rem;
+}
+.Signup-Link{
+    text-decoration: none;
+    color: var(--cta);
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}

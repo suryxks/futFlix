@@ -47,3 +47,19 @@
 .navigation-link{
     text-decoration: none;
 }
+.btn-cta-header{
+    max-width: fit-content;
+    background-color: var(--cta);
+    border: 2px solid var(--cta);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    
+}
+.header-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
