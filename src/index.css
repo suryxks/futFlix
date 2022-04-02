@@ -1,13 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://nectarui.netlify.app/components/css/components.css");
+:root{
+  --background:#001E3C;
+  --cta:#007FFF;
+  --header-background:#071A2F;
+  --border:#5090D3;
+  --icon-color:#3399FF;
+  --card-background:#132F4C;
+  --white:none;
+  --active-tab:#132F4C;
+  --sidebar-text:#B5BCC4;
+}
+
 body {
-  margin: 0;
+  /* margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+  background-color: var(--background);
+  min-height: 100%;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */

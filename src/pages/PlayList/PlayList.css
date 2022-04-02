@@ -1,0 +1,14 @@
+.playlist{
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-auto-rows:5rem 1fr;
+    grid-template-areas:
+    'header header'
+    'sidebar videoListing';
+   gap:0;
+}
+.videoListing{
+    margin: 2rem;
+    grid-area: videoListing;
+}
