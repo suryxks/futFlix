@@ -1,19 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect} from 'react'
 import './Home.css';
 import { Header, Sidebar, VideoCard } from '../../components';
-import axios from 'axios';
+import { useData } from '../../contexts/DataContext';
 export const Home = () => {
-    const [videos, setVideos] = useState([]);
-    useEffect(() => {
-        (async () => {
-            try {
-                const { data } = await axios.get('/api/videos');
-                setVideos(data.videos);
-            } catch (e) {
-                console.error(e.message);
-            }
+    const { videos, getVideos } = useData();
 
-        })();
+    useEffect(() => {
+        getVideos();
     }, [])
     return (
         <div className="home">

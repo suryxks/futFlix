@@ -9,6 +9,10 @@ export const AppRoutes = () => {
       <Route path='/history' element={<History />} />
       <Route path='/playList' element={<PlayList />} />
       <Route path='/watchlater' element={<WatchLater />} />
+      <Route path='*' element={
+        <main style={{ padding: "1rem" }}>
+          <p>There's nothing here!</p>
+        </main>} />
     </Routes>
   );
 };

@@ -7,7 +7,7 @@ export const VideoCard = ({ video }) => {
             <img src={thumbnail} alt={title} className='thumbnail' />
             <div className='video-details'>
                 <h5 className='heading-sm video-title'>{title}</h5>
-                <MoreVertIcon className='icon' />
+                <MoreVertIcon className='icon more-icon' />
             </div>
         </div>
     )

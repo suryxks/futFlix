@@ -33,3 +33,8 @@
 .video-card:hover{
     cursor: pointer;
 }
+.more-icon:hover{
+background-color: var(--card-background);
+color: var(--cta);
+border-radius: 50%;
+}
