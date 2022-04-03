@@ -16,7 +16,9 @@ export const DataProvider = ({ children }) => {
     const getVideo=(id)=>{
         return videos.find(video=>(video._id===id))
     }
-
+  useEffect(()=>{
+      getVideos();
+  },[])
     return (
         <DataContext.Provider value={{videos,err,getVideos,getVideo}}>
             {children}

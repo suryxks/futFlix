@@ -22,3 +22,18 @@
 .fw-light{
     margin:0;
 }
+.videoPlayer-btn{
+    background-color: var(--card-background);
+    color: var(--border);
+    border:none;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    padding: 0.5rem;
+}
+.video-player-actions{
+    display: flex;
+    justify-content: space-around;
+    gap:1rem;
+}

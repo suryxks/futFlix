@@ -5,10 +5,6 @@ import { useData } from '../../contexts/DataContext';
 import {Outlet} from 'react-router-dom'
 export const Home = () => {
     const { videos, getVideos } = useData();
-
-    useEffect(() => {
-        getVideos();
-    }, [])
     return (
         <div className="home">
             <Header />
