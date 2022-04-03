@@ -2,6 +2,7 @@ import { useEffect} from 'react'
 import './Home.css';
 import { Header, Sidebar, VideoCard } from '../../components';
 import { useData } from '../../contexts/DataContext';
+import {Outlet} from 'react-router-dom'
 export const Home = () => {
     const { videos, getVideos } = useData();
 
@@ -16,7 +17,11 @@ export const Home = () => {
                 <div className='videos'>
                     {videos.map(video => {
                         const { _id, creator, title, thumbnail } = video;
-                        return (<VideoCard video={video} />)
+                        return (
+                            <div>
+                                <VideoCard video={video} />
+                                
+                            </div>)
                     })
                     }
                 </div>

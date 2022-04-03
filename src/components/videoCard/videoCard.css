@@ -17,15 +17,15 @@
 }
 .video-card{
     max-width:350px;
-    background-color: var(--card-background);
-    border: 2px solid var(--border);
+    background-color: var(--header-background);
     margin: 1rem;
     display: flex;
     flex-direction: column;
-   
+    border: 2px solid var(--from-border);
     justify-content: space-around;
-    padding: 0.5rem 0.3rem;
+    padding: 1rem 1rem;
     border-radius:0.4rem ;
+    text-decoration: none;
 }
 .icon:hover{
     cursor: pointer;

@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext, useEffect } from 'react';
 import axios from 'axios';
 const DataContext = createContext(null);
 
@@ -13,8 +13,12 @@ export const DataProvider = ({ children }) => {
             seterr(e.message);
         }
     }
+    const getVideo=(id)=>{
+        return videos.find(video=>(video._id===id))
+    }
+
     return (
-        <DataContext.Provider value={{videos,err,getVideos}}>
+        <DataContext.Provider value={{videos,err,getVideos,getVideo}}>
             {children}
         </DataContext.Provider>)
 }
