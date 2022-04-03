@@ -2,7 +2,7 @@ import { Home, Liked, History, PlayList, WatchLater, VideoPlayerPage } from '../
 import { Route, Routes } from 'react-router-dom';
 import { Signup } from './pages/Authentication/Signup';
 import { Login } from './pages/Authentication/Login';
-
+import Mockman from "mockman-js";
 export const AppRoutes = () => {
   return (
     <Routes>
@@ -18,6 +18,7 @@ export const AppRoutes = () => {
         <main style={{ padding: "1rem" }}>
           <p>There's nothing here!</p>
         </main>} />
+        <Route path='/mock' element={<Mockman/>}/>
     </Routes>
   );
 };
