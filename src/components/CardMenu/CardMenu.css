@@ -1,0 +1,26 @@
+.card-menu{
+    background-color: var(--header-background);
+    border: 2px solid var(--from-border);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+   
+    position: relative;
+    left:120px;
+    top:-10px;
+    margin-bottom: -200px;
+}
+.card-menu-btn{
+    background-color: var(--header-background);
+    border-bottom: 2px solid var(--from-border);
+    border-top: none;
+    border-right: none;
+    color: var(--border);
+    display: flex;
+    border-radius: 0.3rem;
+    align-items: center;
+    
+    margin: 0.5rem;
+    
+}
