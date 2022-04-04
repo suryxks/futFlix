@@ -50,7 +50,6 @@ export const DataProvider = ({ children }) => {
                     authorization: encodedToken,
                 },
             });
-            console.log(data)
             setHistory(data.history);
         } catch (error) {
             console.error(error)
