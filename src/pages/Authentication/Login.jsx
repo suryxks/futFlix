@@ -21,7 +21,7 @@ export const Login = () => {
         console.log(data)
         const { foundUser, encodedToken } = data;
         setAuth({ token: encodedToken, userInfo: foundUser });
-        localStorage.setItem('token', encodedToken);
+        localStorage.setItem('token', JSON.stringify(encodedToken));
         localStorage.setItem('user', JSON.stringify(foundUser));
     }
     return (

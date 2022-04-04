@@ -16,7 +16,7 @@ export const Signup = () => {
         const {data}=await axios.post('/api/auth/signup',formValues);
         const {createdUser,encodedToken}=data;
         setAuth({token:encodedToken,userInfo:createdUser});
-        localStorage.setItem('token',encodedToken);
+        localStorage.setItem('token',JSON.stringify(encodedToken));
         localStorage.setItem('user',JSON.stringify(createdUser));
     }
     return (

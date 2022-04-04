@@ -3,4 +3,5 @@ import {History} from './History/History';
 import {PlayList} from './PlayList/PlayList';
 import {WatchLater} from './WatchLater/WatchLater';
 import { Home } from './Home/Home';
-export {Home,Liked,History,PlayList,WatchLater};
+import { VideoPlayerPage } from './VideoPlayerPage/VideoPlayerPage';
+export {Home,Liked,History,PlayList,WatchLater,VideoPlayerPage};
