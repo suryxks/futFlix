@@ -6,7 +6,7 @@ import './videoCard.css'
 import { useData } from '../../contexts/DataContext';
 export const VideoCard = ({ video }) => {
     const [isMenuOpen,setIsMenuOpen]=useState(false);
-    const { _id, creator, title, thumbnail } = video;
+    const { _id, creator, title, thumbnail} = video;
     const {addToHistory}=useData();
     return (
         
@@ -19,7 +19,7 @@ export const VideoCard = ({ video }) => {
                     setIsMenuOpen(prev=>!prev)}} />
                 
             </div>
-            <CardMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+            <CardMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} id={_id}  video={video}/>
         </Link>
        
        
