@@ -76,7 +76,6 @@ export const DataProvider = ({ children }) => {
                     authorization: encodedToken
                 }
             });
-            console.log(data)
             setWatchLater(data.watchlater);
         } catch (error) {
             console.error(error)
@@ -84,7 +83,7 @@ export const DataProvider = ({ children }) => {
     }
     const deleteFromWatchLater = async (id) => {
         try {
-            const { data } = axios.delete(`/api/user/watchlater/${id}`, {
+            const { data } = await axios.delete(`/api/user/watchlater/${id}`, {
                 headers: {
                     authorization: encodedToken,
                 },
