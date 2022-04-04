@@ -16,7 +16,7 @@ export const LikedProvider = ({ children }) => {
             });
             setLikedVideos(data.likes);
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
     const getLikedVideos = async () => {
