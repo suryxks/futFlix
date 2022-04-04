@@ -24,3 +24,6 @@
     margin: 0.5rem;
     
 }
+.delete{
+    color:var(--delete)
+}

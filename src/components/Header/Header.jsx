@@ -18,10 +18,11 @@ export const Header = () => {
                 <button className='btn-cta-header' onClick={() => {
                     if (isAuthenticated()) {
                         logoutHandler();
+                        navigate('/')
                     } else {
                         navigate('/login');
                     }
-                }}>{isAuthenticated() ? 'Logout' : 'Login'}</button>
+                }}>{isAuthenticated()? 'Logout' : 'Login'}</button>
                 <Link className='navigation-link' to='/'><PersonIcon className='icon text-lg' /></Link>
             </div>
         </nav>

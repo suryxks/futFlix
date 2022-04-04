@@ -18,11 +18,11 @@ export const Login = () => {
     const navigate = useNavigate();
     const loginHandler = async (credentials) => {
         const { data } = await axios.post('/api/auth/login', credentials);
-        console.log(data)
         const { foundUser, encodedToken } = data;
         setAuth({ token: encodedToken, userInfo: foundUser });
         localStorage.setItem('token', JSON.stringify(encodedToken));
         localStorage.setItem('user', JSON.stringify(foundUser));
+        navigate('/');
     }
     return (
         <div>
@@ -42,12 +42,11 @@ export const Login = () => {
                 <button className="btn-cta" onClick={(e) => {
                     e.preventDefault();
                     loginHandler(formValues);
-                    navigate('/');
+                   
                 }}>Login</button>
                 <button className="btn-outlined" onClick={(e) => {
                     e.preventDefault();
                     loginHandler(guest);
-                    navigate('/');
                 }}>Login as Guest</button>
                 <Link to='/signup' className="Signup-Link">Sign Up</Link>
             </form>
