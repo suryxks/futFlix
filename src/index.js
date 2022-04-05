@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { DataProvider } from './contexts/DataContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { LikedProvider } from './contexts/LikedContext'
+import { PlaylistProvider } from './contexts/PlayListContext'
 // Call make Server
 makeServer();
 
@@ -15,9 +16,11 @@ ReactDOM.render(
     <Router>
       <AuthProvider>
         <DataProvider>
-          <LikedProvider>
-            <App />
-          </LikedProvider>
+          <PlaylistProvider>
+            <LikedProvider>
+              <App />
+            </LikedProvider>
+          </PlaylistProvider>
         </DataProvider>
       </AuthProvider>
     </Router>

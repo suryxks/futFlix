@@ -12,7 +12,7 @@
 }
 .video{
     border-radius: 0.4rem;
-    margin:auto ;
+    margin-left:auto ;
     min-width:90% ;
     max-height: 80%;
 }

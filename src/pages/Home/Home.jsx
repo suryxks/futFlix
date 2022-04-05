@@ -1,10 +1,10 @@
-import { useEffect} from 'react'
+import { useEffect } from 'react'
 import './Home.css';
 import { Header, Sidebar, VideoCard } from '../../components';
 import { useData } from '../../contexts/DataContext';
-import {Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 export const Home = () => {
-    const { videos, getVideos ,addToHistory} = useData();
+    const { videos, getVideos, addToHistory } = useData();
     return (
         <div className="home">
             <Header />
@@ -15,8 +15,8 @@ export const Home = () => {
                         const { _id, creator, title, thumbnail } = video;
                         return (
                             <div>
-                                <VideoCard video={video}/>
-                                
+                                <VideoCard video={video} />
+
                             </div>)
                     })
                     }

@@ -3,16 +3,13 @@
     background-color: var(--header-background);
     margin-top:1rem;
     grid-area: sidebar;
-   
     height: 100%;
-   position:fixed;
-   top:5rem;
 }
 .sidebar-items{
 
    position: sticky;
    left: 0;
-   top:5rem;
+   top:7rem;
    align-self: start;
    padding-left: 0;
 }

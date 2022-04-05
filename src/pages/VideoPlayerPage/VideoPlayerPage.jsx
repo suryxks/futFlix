@@ -4,6 +4,8 @@ import { Header, Sidebar } from "../../components";
 import { VideoPlayer } from '../../components/videoPlayer/VideoPlayer';
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import './VideoPlayerPage.css'
+// import '../Home/Home.css';
 export const VideoPlayerPage = () => {
   let params = useParams();
   const [video, setVideo] = useState({});
@@ -19,8 +21,10 @@ export const VideoPlayerPage = () => {
     <div className='home'>
       <Header />
       <Sidebar />
-      <div className='video'>
-        <VideoPlayer videoId={videoId} video={video} />
+      <div className="videoListing">
+        <div className='videos'>
+          <VideoPlayer videoId={videoId} video={video} />
+        </div>
       </div>
     </div>
   )
