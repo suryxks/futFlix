@@ -1,16 +1,45 @@
 .playlist-modal{
     margin: 40vh auto;
-    background-color: var(--card-background);
+    background-color: var(--header-background);
     position: absolute;
     top:0px;
     color: white;
     left:50vw;
-    padding: 2rem;
+    padding: 1rem;
     accent-color: var(--cta);
     z-index: 2;
-
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border);
+    border-radius: 0.3rem;
 }
 .playlist-modal:hover{
     backdrop-filter: grayscale(30%);
     color:red;
+}
+.create-playList-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 10rem;
+    align-items: center;
+    justify-content: center;
+}
+.create-playList-form>input{
+    background-color: var(--card-background);
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem;
+    max-width: 10rem;
+}
+.btn-cta{
+    max-width: 10rem;
+}
+.close-btn{
+    background-color: var(--header-background);
+    color: var(--cta);
+    border: none;
+    margin-left: 8rem;
 }

@@ -17,7 +17,3 @@
    display: grid;
    grid-template-columns: repeat(3,1fr);
 }
-.background-filter{
-    /* backdrop-filter: grayscale(5%) opacity(0.8); */
-    background-color: rgba(20,19,25,0.8);
-}

@@ -12,3 +12,8 @@
     margin: 2rem;
     grid-area: videoListing;
 }
+
+.videos{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+}
