@@ -15,31 +15,31 @@ export const Sidebar = () => {
                 <li className={`sidebar-item ${pathname==='/'?'current-tab':''}`}>
                     <Link to='/' className='navigation-link'>
                         <CottageIcon className='icon' />
-                        <span className='fw-bold heading-md'>Home</span>
+                        <span className='fw-semibold heading-sm'>Home</span>
                     </Link>
                 </li>
                 <li className={`sidebar-item ${pathname==='/playlist'?'current-tab':''}`}>
                     <Link to='/playlist' className='navigation-link'>
                         <VideoLibraryIcon className='icon' />
-                        <span className='fw-bold heading-md'>PlayList</span>
+                        <span className='fw-semibold heading-sm'>PlayList</span>
                     </Link>
                 </li>
                 <li className={`sidebar-item ${pathname==='/liked'?'current-tab':''}`}>
                     <Link to='/liked' className='navigation-link'>
                         <FavoriteIcon className='icon' />
-                        <span className='fw-bold heading-md'> Liked</span>
+                        <span className='fw-semibold heading-sm'> Liked</span>
                     </Link>
                 </li>
                 <li className={`sidebar-item ${pathname==='/watchlater'?'current-tab':''}`}>
                     <Link to='/watchlater' className='navigation-link'>
                         <WatchLaterIcon className='icon' />
-                        <span className='fw-bold heading-md'> Watch Later</span>
+                        <span className='fw-semibold heading-sm'> Watch Later</span>
                     </Link>
                 </li>
                 <li className={`sidebar-item ${pathname==='/history'?'current-tab':''}`}>
                     <Link to='/history' className='navigation-link'>
                         <HistoryIcon className='icon' />
-                        <span className='fw-bold heading-md'> History</span>
+                        <span className='fw-semibold heading-sm'> History</span>
                     </Link>
                 </li>
             </ol>

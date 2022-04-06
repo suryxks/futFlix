@@ -24,6 +24,7 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
                         event.preventDefault();
                         setIsModalOpen(true);
                         setVideoToBeAdded(video);
+                        setIsMenuOpen(false)
                     }}>
                         <PlaylistAddIcon className='icon' />Add to Playlist</button>
 
@@ -43,7 +44,6 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
                 </div>
             ) : null
         }
-        {/* <PlaylistModal isModalOpen={isModalOpen}setIsModalOpen={setIsModalOpen} video={video}/> */}
         </div>
 
     );

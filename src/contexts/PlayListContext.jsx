@@ -57,11 +57,23 @@ export const PlaylistProvider = ({ children }) => {
             return playlist;
         }))
     }
+
     useEffect(() => {
         getPlayList();
         createPlayList('two');
     }, [])
-    return (<PlayListContext.Provider value={{ playList, isModalOpen, setIsModalOpen, setPlayList, addToPlayList, videoTobeAdded, setVideoToBeAdded, deleteFromPlaylist }}>
+
+    return (<PlayListContext.Provider value={{
+        playList,
+        isModalOpen,
+        setIsModalOpen,
+        setPlayList,
+        createPlayList,
+        addToPlayList,
+        videoTobeAdded,
+        setVideoToBeAdded,
+        deleteFromPlaylist
+    }}>
         {children}
     </PlayListContext.Provider>);
 }
