@@ -7,9 +7,11 @@
     width: 200px;
    
     position: relative;
-    left:120px;
+    left:100px;
     top:-10px;
     margin-bottom: -200px;
+    padding: 1rem;
+    gap:0.5rem;
 }
 .card-menu-btn{
     background-color: var(--header-background);
