@@ -19,10 +19,13 @@
     padding: 1rem;
     background-color: var(--header-background);
     border-radius: 0.3rem;
+    margin: 1rem;
 }
 .playlistCard>img{
     grid-column: 1/2;
     grid-row: 1/-1;
+    max-width: 330px;
+    border-radius: 0.3rem;
 }
 .details{
     grid-column: 1/3;
