@@ -10,7 +10,6 @@ export const PlaylistModal = ({ isModalOpen, setIsModalOpen, video }) => {
     const [isInputOpen, setIsInputOpen] = useState(false);
     const [inputPlayList, setInputPlayList] = useState('');
     useOnClickOutside(modalref, () => setIsModalOpen(false));
-    console.log(video);
     return (
         <div>{isModalOpen ? (
             <div className={`playlist-modal ${isModalOpen ? 'modalOpen' : ''}`} ref={modalref} onClick={(e) => e.preventDefault()}>
