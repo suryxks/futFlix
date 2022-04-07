@@ -19,7 +19,7 @@ export const PlaylistPage = () => {
                     {videos.length > 0 ? videos.map(video => {
 
                         return (
-                            <div>
+                            <div key={video._id}> 
                                 <VideoCard video={video} />
 
                             </div>)

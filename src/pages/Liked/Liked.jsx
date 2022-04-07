@@ -19,9 +19,9 @@ export const Liked = () => {
             <div className='videoListing'>{`Liked videos(${likedVideos.length})`}
                 <div className='videos'>
                     {likedVideos.map(video => {
-                        const { _id, creator, title, thumbnail } = video;
+                        const { _id} = video;
                         return (
-                            <div>
+                            <div key={_id}>
                                 <VideoCard video={video} />
                             </div>)
                     })

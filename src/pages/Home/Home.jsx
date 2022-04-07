@@ -15,9 +15,9 @@ export const Home = () => {
             <div className= 'videoListing'>Home page
                 <div className='videos'>
                     {videos.map(video => {
-                        const { _id, creator, title, thumbnail } = video;
+                        const { _id } = video;
                         return (
-                            <div>
+                            <div key={_id}>
                                 <VideoCard video={video} />
 
                             </div>)
