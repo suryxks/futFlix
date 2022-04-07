@@ -26,6 +26,8 @@
     padding: 1rem 1rem;
     border-radius:0.4rem ;
     text-decoration: none;
+    height: 250px;
+    max-height: 250px;
 }
 .icon:hover{
     cursor: pointer;
