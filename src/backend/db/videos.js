@@ -4,23 +4,15 @@
  * */
 
 export const videos = [
+
   {
-    _id: "9-cL8gsbekY",
-    title: "350 appearances for ONE club! Scholes, Carragher, Lampard & more",
-    thumbnail: 'https://i.ytimg.com/an_webp/9-cL8gsbekY/mqdefault_6s.webp?du=3000&sqp=COqvu5IG&rs=AOn4CLBqmMSbWTbC4KDocquOj1BiCZdetA',
+    _id: "nE1jmkMFChk",
+    title: "Club LEGENDS’ First & Last Premier League Goals ",
+    creator: "Premier League",
+    thumbnail: 'https://i.ytimg.com/vi/nE1jmkMFChk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnvRMX136fGd3kIMHmpN42c8rvxA',
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    videoUrl: 'https://youtu.be/9-cL8gsbekY',
-    creator: "Premier League",
-  },
-  {
-    _id: "NQmrN9Kop6E",
-    title: "Sadio Mane & Mohamed Salah | BEST Premier League Partnerships | Wingers",
-    creator: "Premier League",
-    thumbnail: 'https://i.ytimg.com/vi/NQmrN9Kop6E/hqdefault.jpg',
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    videoUrl: 'https://youtu.be/NQmrN9Kop6E',
+    videoUrl: 'https://youtu.be/nE1jmkMFChk',
   },
   {
     _id: "VjjifzCs3p0",
@@ -84,5 +76,13 @@ export const videos = [
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     videoUrl: 'https://youtu.be/LSj05cDVG4Y',
-  }
+  }, {
+    _id: "9-cL8gsbekY",
+    title: "350 appearances for ONE club! Scholes, Carragher, Lampard & more",
+    thumbnail: 'https://i.ytimg.com/an_webp/9-cL8gsbekY/mqdefault_6s.webp?du=3000&sqp=COqvu5IG&rs=AOn4CLBqmMSbWTbC4KDocquOj1BiCZdetA',
+    description:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    videoUrl: 'https://youtu.be/9-cL8gsbekY',
+    creator: "Premier League",
+  },
 ];
