@@ -1,5 +1,6 @@
 import { Header, Sidebar, PlaylistCard } from '../../components/index';
 import { usePlayList } from '../../contexts/PlayListContext';
+import { Outlet } from 'react-router-dom';
 import './PlayList.css'
 export const PlayList = () => {
     const { playList } = usePlayList();
@@ -20,8 +21,10 @@ export const PlayList = () => {
                             </div>)
                     })
                     }
+                    <Outlet />
                 </div>
             </div>
+            
         </div>
     )
 }

@@ -9,7 +9,7 @@ export const Home = () => {
     const { videos, getVideos, addToHistory } = useData();
     const { isModalOpen, setIsModalOpen, videoTobeAdded, setVideoToBeAdded } = usePlayList();
     return (
-        <div className='home'>
+        <div className={`home ${isModalOpen?'background-filter':''}`}>
             <Header />
             <Sidebar />
             <div className= 'videoListing'>Home page

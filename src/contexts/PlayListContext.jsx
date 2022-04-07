@@ -57,21 +57,34 @@ export const PlaylistProvider = ({ children }) => {
             return playlist;
         }))
     }
-    const deletePlayList=async(playlistId)=>{
-        try{
-          const {data}=await axios.delete(`/api/user/playlists/${playlistId}`,{
-            headers: {
-                authorization: encodedToken
-            }
-        })
-        setPlayList(data.playlists)
-        }catch(error){
+    const deletePlayList = async (playlistId) => {
+        try {
+            const { data } = await axios.delete(`/api/user/playlists/${playlistId}`, {
+                headers: {
+                    authorization: encodedToken
+                }
+            })
+            setPlayList(data.playlists)
+        } catch (error) {
             console.log(error)
+        }
+    }
+    const getPlayListById = async (playlistId) => {
+        try {
+            const { data } = await axios.get(`/api/user/playlists/${playlistId}`, {
+                headers: {
+                    authorization: encodedToken
+                }
+            });
+            console.log(data)
+            return  data.playlist;
+        } catch (error) {
+            console.error(error)
+            return { title: '', videos: [] }
         }
     }
     useEffect(() => {
         getPlayList();
-        createPlayList('two');
     }, [])
 
     return (<PlayListContext.Provider value={{
@@ -84,7 +97,8 @@ export const PlaylistProvider = ({ children }) => {
         videoTobeAdded,
         setVideoToBeAdded,
         deleteFromPlaylist,
-        deletePlayList
+        deletePlayList,
+        getPlayListById
     }}>
         {children}
     </PlayListContext.Provider>);

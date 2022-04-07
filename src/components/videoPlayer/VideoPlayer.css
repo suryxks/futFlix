@@ -37,3 +37,7 @@
     justify-content: space-around;
     gap:1rem;
 }
+.added{
+    color: hotpink;
+    background-color: var(--card-background);
+}

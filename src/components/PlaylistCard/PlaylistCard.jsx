@@ -6,7 +6,7 @@ import './PlaylistCard.css'
 export const PlaylistCard = ({ img, name, numberOfvideos ,id}) => {
     const {deletePlayList}=usePlayList();
     return (
-        <Link to='/' className="playlistCard">
+        <Link to={`/playlist/${id}`} className="playlistCard">
             <img src={img} alt='playlistimage' />
             <div className="overlay">
                 <div className='fw-bold heading-lg'>{numberOfvideos}</div>
