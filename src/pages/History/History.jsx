@@ -4,8 +4,9 @@ import { useData } from '../../contexts/DataContext';
 import './History.css'
 export const History = () => {
     const {history,getHistory}=useData();
+    const encodedToken=localStorage.getItem('token')
     useEffect(()=>{
-        getHistory();
+        getHistory(encodedToken);
     },[])
     return (
         <div className="history">

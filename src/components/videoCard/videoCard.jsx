@@ -11,9 +11,10 @@ export const VideoCard = ({ video }) => {
     const { _id, creator, title, thumbnail } = video;
     const { addToHistory } = useData();
     const { isModalOpen, setIsModalOpen } = usePlayList();
+    const encodedToken=localStorage.getItem('token');
     return (
 
-        <Link key={_id} className='video-card' to={`/${_id}`} onClick={() => { addToHistory(video) }}>
+        <Link key={_id} className='video-card' to={`/${_id}`} onClick={() => { addToHistory(video,encodedToken) }}>
             <img src={thumbnail} alt={title} className='thumbnail' />
             <div className='video-details'>
                 <h5 className='heading-sm video-title'>{title}</h5>

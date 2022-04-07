@@ -7,12 +7,12 @@ import { usePlayList } from '../../contexts/PlayListContext';
 import { useData } from '../../contexts/DataContext';
 export const VideoPlayer = ({ videoId, video }) => {
     const { creator, title } = video;
-    const { likedVideos,addToLikedVideos } = useLiked();
-    const { setIsModalOpen,videoTobeAdded,setVideoToBeAdded } = usePlayList();
-    const {  addToWatchLater, watchLater, deleteFromWatchLater } = useData();
-    const isLiked=likedVideos.find(item=>video._id===item._id);
-    const isWatchLater=watchLater.find(item=>video._id===item._id);
-    const encodedToken=localStorage.getItem('token');
+    const { likedVideos, addToLikedVideos, deleteLikedVideo } = useLiked();
+    const { setIsModalOpen, videoTobeAdded, setVideoToBeAdded } = usePlayList();
+    const { addToWatchLater, watchLater, deleteFromWatchLater } = useData();
+    const isLiked = likedVideos.find(item => video._id === item._id);
+    const isWatchLater = watchLater.find(item => video._id === item._id);
+    const encodedToken = localStorage.getItem('token');
     return (
         <div className="video-responsive">
             <iframe width='800' height='400' src={`https://www.youtube.com/embed/${videoId}`} className='video'
@@ -25,14 +25,22 @@ export const VideoPlayer = ({ videoId, video }) => {
                 <h3 className='fw-light'>{creator}</h3>
             </div>
             <div className='video-player-actions'>
-                <button className='videoPlayer-btn' onClick={() => { addToLikedVideos(video) }}><FavoriteBorderIcon className={`${isLiked?'added':'icon'}`} /><span className='fw-semibold text-sm'>Like</span></button>
-                <button className='videoPlayer-btn' onClick={()=>{
-                    if(isWatchLater){
-                        deleteFromWatchLater(video._id,encodedToken)
-                    }else{
-                    addToWatchLater(video,encodedToken)
+                <button className='videoPlayer-btn' onClick={() => {
+                    if (isLiked) {
+                        deleteLikedVideo(videoId, encodedToken);
+                    } else {
+                        addToLikedVideos(video, encodedToken)
                     }
-                }}><WatchLaterIcon className={`${isWatchLater?'added':'icon'}`} /><span className='fw-semibold text-sm'>Watch later</span></button>
+                }}>
+                    <FavoriteBorderIcon className={`${isLiked ? 'added' : 'icon'}`} /><span className='fw-semibold text-sm'>Like</span>
+                </button>
+                <button className='videoPlayer-btn' onClick={() => {
+                    if (isWatchLater) {
+                        deleteFromWatchLater(video._id, encodedToken)
+                    } else {
+                        addToWatchLater(video, encodedToken)
+                    }
+                }}><WatchLaterIcon className={`${isWatchLater ? 'added' : 'icon'}`} /><span className='fw-semibold text-sm'>Watch later</span></button>
                 <button className='videoPlayer-btn' onClick={(event) => {
                     event.preventDefault();
                     setIsModalOpen(true);
