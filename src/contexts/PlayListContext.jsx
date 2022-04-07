@@ -16,7 +16,7 @@ export const PlaylistProvider = ({ children }) => {
                 }
             });
             setPlayList(data.playlists)
-            console.log(data);
+           
         } catch (e) {
             console.error(e)
         }
@@ -28,7 +28,7 @@ export const PlaylistProvider = ({ children }) => {
             }
         });
         setPlayList(data.playlists)
-        console.log(data, 'a');
+        
     }
     const addToPlayList = async (playlistId, video) => {
         const { data } = await axios.post(`/api/user/playlists/${playlistId}`, { video }, {
@@ -42,7 +42,7 @@ export const PlaylistProvider = ({ children }) => {
             }
             return playlist;
         }))
-        console.log(data)
+       
     }
     const deleteFromPlaylist = async (playlistId, videoId) => {
         const { data } = await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`, {
@@ -76,7 +76,6 @@ export const PlaylistProvider = ({ children }) => {
                     authorization: encodedToken
                 }
             });
-            console.log(data)
             return  data.playlist;
         } catch (error) {
             console.error(error)
