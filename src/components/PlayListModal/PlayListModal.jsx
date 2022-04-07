@@ -1,3 +1,4 @@
+import {createPortal} from 'react-dom'
 import { useRef, useState } from 'react';
 import { usePlayList } from '../../contexts/PlayListContext';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
@@ -10,7 +11,8 @@ export const PlaylistModal = ({ isModalOpen, setIsModalOpen, video }) => {
     const [isInputOpen, setIsInputOpen] = useState(false);
     const [inputPlayList, setInputPlayList] = useState('');
     useOnClickOutside(modalref, () => setIsModalOpen(false));
-    return (
+    if(!isModalOpen) return null;
+    return createPortal(
         <div>{isModalOpen ? (
             <div className={`playlist-modal ${isModalOpen ? 'modalOpen' : ''}`} ref={modalref} onClick={(e) => e.preventDefault()}>
                 <button className='close-btn heading-lg' onClick={() => { setIsModalOpen(false) }}>
@@ -53,6 +55,6 @@ export const PlaylistModal = ({ isModalOpen, setIsModalOpen, video }) => {
                     </div>
                 </div>
             </div>) : null}
-        </div>
+        </div>,document.body
     )
 }
