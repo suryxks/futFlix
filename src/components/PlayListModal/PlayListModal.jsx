@@ -50,7 +50,7 @@ export const PlaylistModal = ({ isModalOpen, setIsModalOpen, video }) => {
                                     createPlayList(inputPlayList);
                                 }
                             }}>
-                            {isInputOpen ? 'create' : (<span className='text-sm'>Add new playlist</span>)}
+                            {isInputOpen ? 'create' : (<span className='text-sm'> + New Playlist</span>)}
                         </button>
                     </div>
                 </div>

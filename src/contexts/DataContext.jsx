@@ -19,7 +19,7 @@ export const DataProvider = ({ children }) => {
     const getVideo = (id) => {
         return videos.find(video => (video._id === id))
     }
-    const getHistory = async () => {
+    const getHistory = async (encodedToken) => {
         try {
             const { data } = await axios.get('/api/user/history', {
                 headers: {
@@ -31,7 +31,7 @@ export const DataProvider = ({ children }) => {
             console.error(e);
         }
     }
-    const addToHistory = async (video) => {
+    const addToHistory = async (video,encodedToken) => {
         try {
             const { data } = await axios.post('/api/user/history', { video }, {
                 headers: {
@@ -43,7 +43,7 @@ export const DataProvider = ({ children }) => {
             console.error(error)
         }
     }
-    const deleteFromHistory = async (videoId) => {
+    const deleteFromHistory = async (videoId,encodedToken) => {
         try {
             const { data } = await axios.delete(`/api/user/history/${videoId}`, {
                 headers: {
@@ -80,7 +80,7 @@ export const DataProvider = ({ children }) => {
             console.error(error)
         }
     }
-    const deleteFromWatchLater = async (id) => {
+    const deleteFromWatchLater = async (id,encodedToken) => {
         try {
             const { data } = await axios.delete(`/api/user/watchlater/${id}`, {
                 headers: {

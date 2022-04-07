@@ -6,9 +6,10 @@ import './Liked.css';
 export const Liked = () => {
     const { likedVideos, getLikedVideos } = useLiked();
     const { isAuthenticated } = useAuth();
+    const encodedToken=localStorage.getItem('token');
     useEffect(() => {
         if (isAuthenticated()) {
-            getLikedVideos();
+            getLikedVideos(encodedToken);
         }
     }, []);
     return (

@@ -6,17 +6,17 @@ import { useLocation } from 'react-router-dom';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import './CardMenu.css'
 import { useData } from '../../contexts/DataContext';
-import {PlaylistModal} from '../PlayListModal/PlayListModal'
+import { PlaylistModal } from '../PlayListModal/PlayListModal'
 import { usePlayList } from '../../contexts/PlayListContext';
-export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
+export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video }) => {
     const ref = useRef();
     const location = useLocation();
     const { pathname } = location;
     const { deleteFromHistory, addToWatchLater, watchLater, deleteFromWatchLater } = useData();
-    const { setIsModalOpen,videoTobeAdded,setVideoToBeAdded } = usePlayList();
+    const { setIsModalOpen, videoTobeAdded, setVideoToBeAdded } = usePlayList();
     useOnClickOutside(ref, () => setIsMenuOpen(false));
     let isWatchLater = watchLater.find(video => video._id === id);
-    const encodedToken=localStorage.getItem('token');
+    const encodedToken = localStorage.getItem('token');
     return (
         <div>{
             isMenuOpen ? (
@@ -31,12 +31,13 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
 
                     {isWatchLater ? (<button className='card-menu-btn fw-semibold delete' onClick={(event) => {
                         event.preventDefault();
-                        deleteFromWatchLater(id);
+                        deleteFromWatchLater(id, encodedToken);
 
                     }}> <DeleteIcon className='delete' />Remove from watch later</button>) :
                         (<button className='card-menu-btn fw-semibold ' onClick={(event) => {
                             event.preventDefault();
-                            addToWatchLater(video,encodedToken);
+                            addToWatchLater(video, encodedToken);
+
                         }}> <WatchLaterIcon className='icon' />Add to watch Later</button>)}
                     {pathname === '/history' ? (<button className='card-menu-btn fw-semibold delete' onClick={(event) => {
                         event.preventDefault();
@@ -45,6 +46,7 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
                 </div>
             ) : null
         }
+
         </div>
 
     );
