@@ -56,7 +56,7 @@ export const DataProvider = ({ children }) => {
         }
 
     }
-    const getWatchLater = async () => {
+    const getWatchLater = async (encodedToken) => {
         try {
             const { data } = await axios.get('/api/user/watchlater', {
                 headers: {
@@ -68,7 +68,7 @@ export const DataProvider = ({ children }) => {
             console.error(e);
         }
     }
-    const addToWatchLater = async (video) => {
+    const addToWatchLater = async (video,encodedToken) => {
         try {
             const { data } = await axios.post('/api/user/watchlater', { video }, {
                 headers: {

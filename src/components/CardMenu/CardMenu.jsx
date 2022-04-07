@@ -16,6 +16,7 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
     const { setIsModalOpen,videoTobeAdded,setVideoToBeAdded } = usePlayList();
     useOnClickOutside(ref, () => setIsMenuOpen(false));
     let isWatchLater = watchLater.find(video => video._id === id);
+    const encodedToken=localStorage.getItem('token');
     return (
         <div>{
             isMenuOpen ? (
@@ -35,7 +36,7 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
                     }}> <DeleteIcon className='delete' />Remove from watch later</button>) :
                         (<button className='card-menu-btn fw-semibold ' onClick={(event) => {
                             event.preventDefault();
-                            addToWatchLater(video);
+                            addToWatchLater(video,encodedToken);
                         }}> <WatchLaterIcon className='icon' />Add to watch Later</button>)}
                     {pathname === '/history' ? (<button className='card-menu-btn fw-semibold delete' onClick={(event) => {
                         event.preventDefault();
