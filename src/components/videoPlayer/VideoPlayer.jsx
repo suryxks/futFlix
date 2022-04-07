@@ -12,6 +12,7 @@ export const VideoPlayer = ({ videoId, video }) => {
     const {  addToWatchLater, watchLater, deleteFromWatchLater } = useData();
     const isLiked=likedVideos.find(item=>video._id===item._id);
     const isWatchLater=watchLater.find(item=>video._id===item._id);
+    const encodedToken=localStorage.getItem('token');
     return (
         <div className="video-responsive">
             <iframe width='800' height='400' src={`https://www.youtube.com/embed/${videoId}`} className='video'
@@ -27,9 +28,9 @@ export const VideoPlayer = ({ videoId, video }) => {
                 <button className='videoPlayer-btn' onClick={() => { addToLikedVideos(video) }}><FavoriteBorderIcon className={`${isLiked?'added':'icon'}`} /><span className='fw-semibold text-sm'>Like</span></button>
                 <button className='videoPlayer-btn' onClick={()=>{
                     if(isWatchLater){
-                        deleteFromWatchLater(video._id)
+                        deleteFromWatchLater(video._id,encodedToken)
                     }else{
-                    addToWatchLater(video)
+                    addToWatchLater(video,encodedToken)
                     }
                 }}><WatchLaterIcon className={`${isWatchLater?'added':'icon'}`} /><span className='fw-semibold text-sm'>Watch later</span></button>
                 <button className='videoPlayer-btn' onClick={(event) => {
