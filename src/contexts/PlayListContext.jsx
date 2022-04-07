@@ -57,7 +57,18 @@ export const PlaylistProvider = ({ children }) => {
             return playlist;
         }))
     }
-
+    const deletePlayList=async(playlistId)=>{
+        try{
+          const {data}=await axios.delete(`/api/user/playlists/${playlistId}`,{
+            headers: {
+                authorization: encodedToken
+            }
+        })
+        setPlayList(data.playlists)
+        }catch(error){
+            console.log(error)
+        }
+    }
     useEffect(() => {
         getPlayList();
         createPlayList('two');
@@ -72,7 +83,8 @@ export const PlaylistProvider = ({ children }) => {
         addToPlayList,
         videoTobeAdded,
         setVideoToBeAdded,
-        deleteFromPlaylist
+        deleteFromPlaylist,
+        deletePlayList
     }}>
         {children}
     </PlayListContext.Provider>);

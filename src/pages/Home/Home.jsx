@@ -7,12 +7,12 @@ import { usePlayList } from '../../contexts/PlayListContext';
 import { PlaylistModal } from '../../components/PlayListModal/PlayListModal'
 export const Home = () => {
     const { videos, getVideos, addToHistory } = useData();
-    const { isModalOpen, setIsModalOpen,videoTobeAdded,setVideoToBeAdded } = usePlayList();
+    const { isModalOpen, setIsModalOpen, videoTobeAdded, setVideoToBeAdded } = usePlayList();
     return (
-        <div className="home">
+        <div className='home'>
             <Header />
             <Sidebar />
-            <div className='videoListing'>Home page
+            <div className= 'videoListing'>Home page
                 <div className='videos'>
                     {videos.map(video => {
                         const { _id, creator, title, thumbnail } = video;

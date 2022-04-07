@@ -13,9 +13,12 @@
     border: 2px solid var(--border);
     border-radius: 0.3rem;
 }
-.playlist-modal:hover{
-    backdrop-filter: grayscale(30%);
-    color:red;
+.modalOpen{
+    color: white;
+    background-color: var(--header-background);
+    accent-color: var(--cta);
+    border: 2px solid var(--border);
+    filter: grayscale(0%);
 }
 .create-playList-form{
     display: flex;
@@ -42,4 +45,5 @@
     color: var(--cta);
     border: none;
     margin-left: 8rem;
+    filter: none;
 }

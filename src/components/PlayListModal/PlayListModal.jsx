@@ -13,7 +13,7 @@ export const PlaylistModal = ({ isModalOpen, setIsModalOpen, video }) => {
     console.log(video);
     return (
         <div>{isModalOpen ? (
-            <div className='playlist-modal' ref={modalref} onClick={(e) => e.preventDefault()}>
+            <div className={`playlist-modal ${isModalOpen ? 'modalOpen' : ''}`} ref={modalref} onClick={(e) => e.preventDefault()}>
                 <button className='close-btn heading-lg' onClick={() => { setIsModalOpen(false) }}>
                     <CancelPresentationIcon />
                 </button>
@@ -49,7 +49,7 @@ export const PlaylistModal = ({ isModalOpen, setIsModalOpen, video }) => {
                                     createPlayList(inputPlayList);
                                 }
                             }}>
-                            {isInputOpen ? 'create' : (<span className='text-sm'>CREATE PLAY LIST</span>)}
+                            {isInputOpen ? 'create' : (<span className='text-sm'>Add new playlist</span>)}
                         </button>
                     </div>
                 </div>

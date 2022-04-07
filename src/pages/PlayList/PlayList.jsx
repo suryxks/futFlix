@@ -1,11 +1,27 @@
-import {Header,Sidebar} from '../../components/index';
+import { Header, Sidebar, PlaylistCard } from '../../components/index';
+import { usePlayList } from '../../contexts/PlayListContext';
 import './PlayList.css'
 export const PlayList = () => {
+    const { playList } = usePlayList();
     return (
         <div className="playlist">
             <Header />
             <Sidebar />
-            <div className='videoListing'>Playlist</div>
+            <div className='videoListing'>Playlist
+                <div className='videos'>
+                    {playList.map(list => {
+                        const { videos, title, _id } = list
+                        return (
+                            <div>
+                                {
+                                    videos.length === 0 ? null : (
+                                        <PlaylistCard img={videos[0].thumbnail} name={title} numberOfvideos={videos.length} id={_id} />)
+                                }
+                            </div>)
+                    })
+                    }
+                </div>
+            </div>
         </div>
     )
 }
