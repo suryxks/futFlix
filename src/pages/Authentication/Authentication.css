@@ -19,6 +19,8 @@
     border-radius: 0.3rem;
     width: 20rem;
     cursor: pointer;
+    margin: 1rem;
+    border: 2px solid var(--cta);
 }
 
 .btn-outlined {
