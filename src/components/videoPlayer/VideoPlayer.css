@@ -12,7 +12,7 @@
 }
 .video{
     border-radius: 0.4rem;
-    margin:auto ;
+    margin-left:auto ;
     min-width:90% ;
     max-height: 80%;
 }
@@ -36,4 +36,8 @@
     display: flex;
     justify-content: space-around;
     gap:1rem;
+}
+.added{
+    color: hotpink;
+    background-color: var(--card-background);
 }

@@ -1,4 +1,5 @@
 import { Server, Model, RestSerializer } from "miragejs";
+import {v4 as uuid} from 'uuid';
 import {
   loginHandler,
   signupHandler,
@@ -68,7 +69,7 @@ export function makeServer({ environment = "development" } = {}) {
           likes: [],
           watchlater: [],
           history: [],
-          playlists: [],
+          playlists: [{title: 'one', videos: [], _id: uuid()}],
         })
       );
     },

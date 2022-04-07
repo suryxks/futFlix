@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { Header } from "../../components";
 import { useAuth } from '../../contexts/AuthContext';
-import { useNavigate,Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import './Authentication.css';
 
 export const Login = () => {
@@ -17,12 +17,21 @@ export const Login = () => {
     const { auth, setAuth } = useAuth();
     const navigate = useNavigate();
     const loginHandler = async (credentials) => {
-        const { data } = await axios.post('/api/auth/login', credentials);
-        const { foundUser, encodedToken } = data;
-        setAuth({ token: encodedToken, userInfo: foundUser });
-        localStorage.setItem('token', JSON.stringify(encodedToken));
-        localStorage.setItem('user', JSON.stringify(foundUser));
-        navigate('/');
+        try {
+            const response = await axios.post('/api/auth/login', credentials);
+            if (response.status === 200) {
+                const { foundUser, encodedToken } = await response.data;
+                localStorage.setItem("token", JSON.stringify(encodedToken));
+                localStorage.setItem("userInfo", JSON.stringify(foundUser));
+                setAuth({
+                    token: encodedToken,
+                    userInfo: foundUser
+                });
+                navigate("/");
+            }
+        } catch (error) {
+            console.error(error);
+        }
     }
     return (
         <div>
@@ -39,10 +48,10 @@ export const Login = () => {
                     className="auth-input"
                     value={formValues.password} onChange={(e) => setFormValues(prev => ({ ...prev, password: e.target.value }))}
                 />
-                <button className="btn-cta" onClick={(e) => {
+                <button className="btn-cta-login" onClick={(e) => {
                     e.preventDefault();
                     loginHandler(formValues);
-                   
+
                 }}>Login</button>
                 <button className="btn-outlined" onClick={(e) => {
                     e.preventDefault();

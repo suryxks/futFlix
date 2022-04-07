@@ -6,11 +6,14 @@ import { useLocation } from 'react-router-dom';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import './CardMenu.css'
 import { useData } from '../../contexts/DataContext';
-export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video }) => {
+import {PlaylistModal} from '../PlayListModal/PlayListModal'
+import { usePlayList } from '../../contexts/PlayListContext';
+export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video}) => {
     const ref = useRef();
     const location = useLocation();
     const { pathname } = location;
     const { deleteFromHistory, addToWatchLater, watchLater, deleteFromWatchLater } = useData();
+    const { setIsModalOpen,videoTobeAdded,setVideoToBeAdded } = usePlayList();
     useOnClickOutside(ref, () => setIsMenuOpen(false));
     let isWatchLater = watchLater.find(video => video._id === id);
     return (
@@ -19,7 +22,9 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video }) => {
                 <div className='card-menu' ref={ref}>
                     <button className='card-menu-btn fw-semibold' onClick={(event) => {
                         event.preventDefault();
-
+                        setIsModalOpen(true);
+                        setVideoToBeAdded(video);
+                        setIsMenuOpen(false)
                     }}>
                         <PlaylistAddIcon className='icon' />Add to Playlist</button>
 
@@ -38,7 +43,8 @@ export const CardMenu = ({ isMenuOpen, setIsMenuOpen, id, video }) => {
                     }}> <DeleteIcon className='delete' />Remove from History</button>) : null}
                 </div>
             ) : null
-        }</div>
+        }
+        </div>
 
     );
 }

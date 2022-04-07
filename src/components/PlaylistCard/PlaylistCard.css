@@ -1,0 +1,48 @@
+.overlay{
+    background-color: black;
+    width: 150px;
+    height: 190px;
+    opacity: 0.8;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    text-decoration: none;
+}
+.playlistCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 330px;
+    padding: 1rem;
+    background-color: var(--header-background);
+    border-radius: 0.3rem;
+    margin: 1rem;
+}
+.playlistCard>img{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    max-width: 330px;
+    border-radius: 0.3rem;
+}
+.details{
+    grid-column: 1/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+.heading-md{
+    color: white;
+    text-decoration: none;
+}
+.heading-md:visited{
+    text-decoration: none;
+    color: white;
+}
+.delete{
+    background-color: var(--header-background);
+    border: none;
+}

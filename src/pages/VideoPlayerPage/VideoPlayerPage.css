@@ -1,0 +1,9 @@
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.videoListing{
+    padding: 5rem auto;
+}
