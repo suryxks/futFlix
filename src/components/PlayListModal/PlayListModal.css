@@ -1,10 +1,13 @@
 .playlist-modal{
-    margin: 40vh auto;
+   
     background-color: var(--header-background);
     position: absolute;
     top:0px;
     color: white;
-    left:50vw;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    margin:auto;
     padding: 1rem;
     accent-color: var(--cta);
     z-index: 2;
@@ -12,6 +15,8 @@
     flex-direction: column;
     border: 2px solid var(--border);
     border-radius: 0.3rem;
+    width: fit-content;
+    height:200px;
 }
 .modalOpen{
     color: white;
